@@ -3,11 +3,10 @@ open TodoItem;
 
 [@react.component]
 let make = (~todos: list(todo), ~onComplete) => {
-  let items =
-    List.map(
-      todo => <TodoItem todo key={string_of_int(todo.id)} onComplete />,
-      todos,
+  let mapItems =
+    List.map(todo =>
+      <TodoItem key={string_of_int(todo.id)} todo onComplete />
     );
 
-  <div> {ReasonReact.array(Array.of_list(items))} </div>;
+  <div> {todos |> mapItems |> toArr} </div>;
 };

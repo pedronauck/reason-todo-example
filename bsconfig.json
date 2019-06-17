@@ -1,0 +1,33 @@
+{
+  "name": "reason-test",
+  "reason": {
+    "react-jsx": 3
+  },
+  "sources": {
+    "dir": "src",
+    "subdirs": true
+  },
+  "package-specs": [
+    {
+      "module": "commonjs",
+      "in-source": true
+    }
+  ],
+  "suffix": ".bs.js",
+  "bsc-flags": ["-bs-super-errors"],
+  "bs-dependencies": ["reason-react", "bs-css"],
+  "warnings": {
+    "error": "+101"
+  },
+  "namespace": true,
+  "refmt": 3,
+  "gentypeconfig": {
+    "language": "typescript",
+    "module": "es6",
+    "importPath": "relative",
+    "debug": {
+      "all": false
+    },
+    "exportInterfaces": false
+  }
+}

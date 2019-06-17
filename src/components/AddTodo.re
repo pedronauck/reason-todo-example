@@ -21,6 +21,8 @@ module Styles = {
 let make = (~onSubmit) => {
   let (text, setText) = React.useState(() => "");
 
+  let handleChange = ev => ev |> valFromEvent |> setText;
+
   let handleSubmit = ev => {
     ReactEvent.Form.preventDefault(ev);
     if (String.length(text) > 0) {
@@ -28,8 +30,6 @@ let make = (~onSubmit) => {
       setText(_ => "");
     };
   };
-
-  let handleChange = ev => ev |> valFromEvent |> setText;
 
   <form onSubmit=handleSubmit>
     <input className=Styles.input value=text onChange=handleChange />
